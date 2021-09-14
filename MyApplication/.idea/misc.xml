@@ -14,6 +14,18 @@
         <entry key="..\:/Project/AndroidStudioProjects/MyApplication/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.18385416666666668" />
         <entry key="..\:/Project/AndroidStudioProjects/MyApplication/app/src/main/res/xml/device_admin.xml" value="0.19882246376811594" />
         <entry key="..\:/Project/AndroidStudioProjects/MyApplication/app/src/main/res/xml/device_admin_receiver_impl.xml" value="0.19882246376811594" />
+        <entry key="..\:/gitProject/android_practice/MyApplication/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.33541666666666664" />
+        <entry key="..\:/gitProject/android_practice/MyApplication/app/src/main/res/drawable/cancel_icon.xml" value="1.0" />
+        <entry key="..\:/gitProject/android_practice/MyApplication/app/src/main/res/drawable/ic_baseline_clear_24.xml" value="0.3729166666666667" />
+        <entry key="..\:/gitProject/android_practice/MyApplication/app/src/main/res/drawable/ic_launcher_background.xml" value="0.33541666666666664" />
+        <entry key="..\:/gitProject/android_practice/MyApplication/app/src/main/res/drawable/layout_1.xml" value="0.33541666666666664" />
+        <entry key="..\:/gitProject/android_practice/MyApplication/app/src/main/res/drawable/shape_wihte_frame.xml" value="0.33541666666666664" />
+        <entry key="..\:/gitProject/android_practice/MyApplication/app/src/main/res/layout/activity_main.xml" value="0.31927083333333334" />
+        <entry key="..\:/gitProject/android_practice/MyApplication/app/src/main/res/layout/content_main.xml" value="0.31927083333333334" />
+        <entry key="..\:/gitProject/android_practice/MyApplication/app/src/main/res/layout/fragment_first.xml" value="0.33" />
+        <entry key="..\:/gitProject/android_practice/MyApplication/app/src/main/res/layout/fragment_second.xml" value="0.31927083333333334" />
+        <entry key="..\:/gitProject/android_practice/MyApplication/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.33541666666666664" />
+        <entry key="..\:/gitProject/android_practice/MyApplication/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.3729166666666667" />
       </map>
     </option>
   </component>

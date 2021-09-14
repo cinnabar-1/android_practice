@@ -3,7 +3,9 @@ package com.example.myapplication.utils;
 import androidx.annotation.NonNull;
 
 import com.alibaba.fastjson.JSONObject;
+import com.example.myapplication.R;
 import com.example.myapplication.conf.Configuration;
+import com.example.myapplication.entity.ResponseEntity;
 
 import java.io.DataOutputStream;
 import java.net.HttpURLConnection;
@@ -39,7 +41,7 @@ public class HttpUtils {
     }
 
     // HTTP GET请求
-    public static String sendGet(@NonNull String url) throws Exception {
+    public static ResponseEntity sendGet(@NonNull String url) throws Exception {
 
         URL obj = new URL(url);
         HttpURLConnection con = (HttpURLConnection) obj.openConnection();
@@ -56,8 +58,14 @@ public class HttpUtils {
         Scanner scanner = new Scanner(con.getInputStream());
         String responseBody = scanner.useDelimiter("\\A").next();
         System.out.println(responseBody);
-        JSONObject jsonObject = new JSONObject();
-        return responseBody;
+        JSONObject jsonObject = JSONObject.parseObject(responseBody);
+        ResponseEntity responseEntity = new ResponseEntity();
+        responseEntity.setCode(jsonObject.getInteger("code"));
+        responseEntity.setMessage(jsonObject.getString("message"));
+        responseEntity.setData(jsonObject.getString("data"));
+        return responseEntity;
+
+
     }
 
     // HTTP POST请求

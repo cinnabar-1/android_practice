@@ -7,6 +7,8 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
 
+import com.example.myapplication.entity.ResponseEntity;
+import com.example.myapplication.service.HttpThread;
 import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,6 +24,7 @@ import com.example.myapplication.databinding.ActivityMainBinding;
 
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -31,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
     private BroadcastReceiverImpl broadcastReceiver = new BroadcastReceiverImpl();
     private static final String EXIT_ACTION = "action.exit";
+    private ResponseEntity reponse = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,13 +45,20 @@ public class MainActivity extends AppCompatActivity {
 
         setSupportActionBar(binding.toolbar);
 
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
-        appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
-        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
+//        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
+//        appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
+//        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
 
         IntentFilter filter = new IntentFilter();
         filter.addAction(EXIT_ACTION);
         registerReceiver(broadcastReceiver, filter);
+
+        reponse = HttpThread.testConnect();
+        if (reponse != null && reponse.getCode() == 200) {
+            Toast.makeText(MainActivity.this, "net Work is OK", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(MainActivity.this, "oh we can't connect server ", Toast.LENGTH_SHORT).show();
+        }
 
         binding.fab.setOnClickListener(new View.OnClickListener() {
             @Override
