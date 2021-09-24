@@ -1,13 +1,14 @@
 package com.example.myapplication.entity;
 
 public class ResponseEntity {
-    private Integer code;
+    // 搞一个默认值,防止请求不到服务器时，属性为null的情况
+    private Integer code = 300;
 
-    private String message;
+    private String message = "";
 
-    private Object data;
+    private Object data = "";
 
-    private String error;
+    private String error = "";
 
     public ResponseEntity() {
     }
